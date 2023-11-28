@@ -1,0 +1,35 @@
+To adjust the permissions to the sp_sqlagent_update_agent_xps SQL Server procedure, you need to do the following steps:
+
+- Find out which account is running the SQL Server Agent service. You can do this by opening the services.msc console and locating the SQL Server Agent service. Right-click on the service and select Properties. On the Log On tab, you will see the account name. For example, it could be Local System account or a specific user account.
+- Grant the sysadmin server role to the account that is running the SQL Server Agent service. You can do this by using the SQL Server Management Studio, connecting to the Database Engine, expanding the Security node, and then the Logins node. Find the account name and right-click on it. Select Properties, and then the Server Roles page. Check the sysadmin box and click OK.
+- Enable the Agent XPs server configuration option. This option allows the SQL Server Agent extended stored procedures to be available on the server. You can enable this option by running the following commands in a query window:
+
+```sql
+sp_configure 'show advanced options', 1;
+GO
+RECONFIGURE;
+GO
+sp_configure 'Agent XPs', 1;
+GO
+RECONFIGURE
+GO
+```
+
+- Restart the SQL Server Agent service. You can do this by using the services.msc console or the SQL Server Management Studio. Right-click on the SQL Server Agent service and select Restart.
+
+For more information, you can refer to the following web pages:
+
+- [Configure SQL Server Agent](^7^)
+- [Agent XPs (server configuration option)](^6^)
+- [The EXECUTE permission was denied on the object 'sp_sqlagent_update_agent_xps', database 'msdb', schema 'dbo'. [SQLSTATE 42000] (Error 229)](^5^)
+
+I hope this helps you to adjust the permissions to the sp_sqlagent_update_agent_xps SQL Server procedure. 😊
+
+Origem: conversa com o Bing, 26/11/2023
+(1) Configure SQL Server Agent - SQL Server Agent | Microsoft Learn. https://learn.microsoft.com/en-us/sql/ssms/agent/configure-sql-server-agent?view=sql-server-ver16.
+(2) Agent XPs (server configuration option) - SQL Server. https://learn.microsoft.com/en-us/sql/database-engine/configure-windows/agent-xps-server-configuration-option?view=sql-server-ver16.
+(3) sql server express - The EXECUTE permission was denied on the object .... https://stackoverflow.com/questions/58762443/the-execute-permission-was-denied-on-the-object-sp-sqlagent-update-agent-xps.
+(4) Configure SQL Server Agent - SQL Server Agent | Microsoft Learn. https://learn.microsoft.com/pt-br/sql/ssms/agent/configure-sql-server-agent?view=sql-server-ver16.
+(5) Agent XPs (opção de configuração do servidor) - SQL Server. https://learn.microsoft.com/pt-br/sql/database-engine/configure-windows/agent-xps-server-configuration-option?view=sql-server-ver16.
+(6) sql server - Permissões de usuário - Stack Overflow em Português. https://pt.stackoverflow.com/questions/308844/permiss%c3%b5es-de-usu%c3%a1rio.
+(7) Permissões do catálogo de serviços de integração não funcionam com .... https://support.microsoft.com/pt-br/topic/permiss%C3%B5es-do-cat%C3%A1logo-de-servi%C3%A7os-de-integra%C3%A7%C3%A3o-n%C3%A3o-funcionam-com-grupos-do-windows-no-sql-server-2012-ou-2014-do-sql-server-4a09e508-4c92-52f9-fbc5-99a6db1b26b1.
