@@ -7,7 +7,7 @@ $SQLCmd.Connection = $SQLConnection
 $SQLAdapter = New-Object System.Data.SqlClient.SqlDataAdapter
 $FilePath = ".\"
 $Delimiter = ","
-$Today = Get-Date -UFormat "%y_%m_%d"
+$Today = Get-Date -UFormat "%Y_%m_%d"
 $SQLQuery = "
 select so.OrderID
     , so.CustomerID
