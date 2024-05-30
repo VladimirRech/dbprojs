@@ -1,0 +1,6 @@
+Realizar download do instalador.
+Verificar espaçõ necessário e criar estrutura para instalação na máquina local.
+Instalar.
+Fazer download do banco de dados de exemplo.
+Importar o banco de dados de exemplo.
+Seguir próximos passos.

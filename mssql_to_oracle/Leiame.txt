@@ -1,0 +1,20 @@
+Projeto transição para Oracle
+
+Objetivo
+
+	01. Embasar e relembrar conceitos do banco de dados
+	02. Criar a base para evoluir no produto.
+	03. Fazer um paralelo entre Oraccle e SQL Server
+	
+Milestones
+
+	01. Oracle instalado e rodando na máquina local
+	02. Banco de dados de exemplo carregado
+	03. Post no blog com algumas comparações com SQL Server
+
+Links
+
+	Tutoriais
+	
+		01. https://www.oracletutorial.com/
+		02. https://www.oracle.com/webfolder/technetwork/tutorials/obe/db/12c/r1/odb_quickstart/odb_quick_start.html
