@@ -18,3 +18,23 @@ Can't activate the process
 1. Fix the permission: don't work.
 2. Install Windows Process Activation Service, MSMQ, Windows Identity Foundation 3.5 and Windows Power Shell 3.0: don't work.
 3. Testing run stand alone Power Shell script, without SQL Server Agent
+
+## Final solution
+1. Ignoring the Create SQL Server Agent because I don't want to reinstall SQL Server in my machine at this moment.
+2. Maybe this issue is related to the fact that my Windows 11 Edition is Home Editon.
+3. I choose to run the shell script from Power Shell and it workd.
+
+# Issue when trying to import
+When trying to execute the script into the file IMPORT_CSV_SCRIPT.sql SQL Server throw this error Message:
+
+````
+Msg 4864, Level 16, State 1, Line 2
+Bulk load data conversion error (type mismatch or invalid character for the specified codepage) for row 2, column 10 (AmountExcludingTax).
+Msg 4864, Level 16, State 1, Line 2
+Bulk load data conversion error (type mismatch or invalid character for the specified codepage) for row 3, column 10 (AmountExcludingTax).
+````
+
+The SQL Server documentation said that I don't have the option to select the decimal separator. [XML Format Files (SQL Server)](https://learn.microsoft.com/en-us/sql/relational-databases/import-export/xml-format-files-sql-server?view=sql-server-ver16), It don't have an [XML attribute]() to set this. 
+
+### Workaround 1 - change the field separator in CSV file.
+Doosn't work.

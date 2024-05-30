@@ -1,8 +1,6 @@
-
 <?xml version="1.0"?>
-<BCPFORMAT xmlns=<a href="http://schemas.microsoft.com/sqlserver/2004/bulkload/format">
-    http://schemas.microsoft.com/sqlserver/2004/bulkload/format</a>
-    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"> <RECORD>
+<BCPFORMAT xmlns="http://schemas.microsoft.com/sqlserver/2004/bulkload/format" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <RECORD>
         <FIELD ID="1" xsi:type="CharTerm" TERMINATOR="," MAX_LENGTH="100" />
         <FIELD ID="2" xsi:type="CharTerm" TERMINATOR="," MAX_LENGTH="100" />
         <FIELD ID="3" xsi:type="CharTerm" TERMINATOR="," MAX_LENGTH="100" />
@@ -15,8 +13,8 @@
         <FIELD ID="10" xsi:type="CharTerm" TERMINATOR="," MAX_LENGTH="100" />
         <FIELD ID="11" xsi:type="CharTerm" TERMINATOR="," MAX_LENGTH="100" />
         <FIELD ID="12" xsi:type="CharTerm" TERMINATOR="," MAX_LENGTH="100" />
-        <FIELD ID="13" xsi:type="CharTerm" TERMINATOR="," MAX_LENGTH="100" COLLATION="SQL_Latin1_General_CP1_CI_AS" />
-        <FIELD ID="14" xsi:type="CharTerm" TERMINATOR="\r\n" MAX_LENGTH="100" COLLATION="SQL_Latin1_General_CP1_CI_AS" />
+        <FIELD ID="13" xsi:type="CharTerm" TERMINATOR="," MAX_LENGTH="100" />
+        <FIELD ID="14" xsi:type="CharTerm" TERMINATOR="0x0a" MAX_LENGTH="100" />
     </RECORD>
     <ROW>
         <COLUMN SOURCE="1" NAME="OrderID" xsi:type="SQLINT"/>
@@ -31,7 +29,7 @@
         <COLUMN SOURCE="10" NAME="AmountExcludingTax" xsi:type="SQLDECIMAL"/>
         <COLUMN SOURCE="11" NAME="OutstandingBalance" xsi:type="SQLDECIMAL"/>
         <COLUMN SOURCE="12" NAME="TransactionAmount" xsi:type="SQLDECIMAL"/>
-        <COLUMN SOURCE="13" NAME="CustomerName" xsi:type="SQLVARCHAR"/>
-        <COLUMN SOURCE="14" NAME="PhoneNumber" xsi:type="SQLVARCHAR"/>
+        <COLUMN SOURCE="13" NAME="CustomerName" xsi:type="SQLNVARCHAR"/>
+        <COLUMN SOURCE="14" NAME="PhoneNumber" xsi:type="SQLNVARCHAR"/>
     </ROW>
 </BCPFORMAT>

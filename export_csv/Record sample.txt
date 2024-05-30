@@ -1,0 +1,16 @@
+Record sample:
+
+"OrderID": "63968"
+"CustomerID": "1045"
+"SalespersonPersonID": "3"
+"OrderDate": "01/01/2016 00:00:00"
+"InvoiceID": "61328"
+"InvoiceDate": "01/01/2016 00:00:00"
+"TotalDryItems": "4"
+"TotalChillerItems": "0"
+"TransactionDate": "01/01/2016 00:00:00"
+"AmountExcludingTax": "2553,60"
+"OutstandingBalance": "0,00"
+"TransactionAmount": "2936,64"
+"CustomerName": "Matteo Cattaneo"
+"PhoneNumber": "(229) 555-0100"
