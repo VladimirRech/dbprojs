@@ -17,4 +17,12 @@ Links
 	Tutoriais
 	
 		01. https://www.oracletutorial.com/
+			01.01 >>> https://www.oracletutorial.com/getting-started/
 		02. https://www.oracle.com/webfolder/technetwork/tutorials/obe/db/12c/r1/odb_quickstart/odb_quick_start.html
+
+	Referências
+
+		01. Tutoriais direto da Oracle
+			https://www.oracle.com/br/database/technologies/#rc30related
+
+		02. Informações sobre a versão gratuita para o 23a

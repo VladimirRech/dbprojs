@@ -1,1 +1,2 @@
 >>> Ler tutorial introdutório
+    - https://www.oracletutorial.com/getting-started/what-is-oracle-database/

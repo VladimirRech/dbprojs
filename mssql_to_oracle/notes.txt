@@ -1,0 +1,37 @@
+ACRONYMS
+
+    MSSQL: Microsoft SQL Server Database
+
+[30/05/2024]
+
+Source https://www.oracletutorial.com/getting-started/what-is-oracle-database/
+
+STARTING
+
+    1970: first concepts about how to store data in a structured form. Dr. Ted Codd, a computer scientist, invented the relational model for database management.
+
+MSSQL x ORACLE
+
+    FEATURE                 MSSQL ORACLE   NOTES  
+    Express (free) version   Yes    Yes
+
+
+Installing Oracle Database (https://www.oracletutorial.com/getting-started/install-oracle/)
+
+    In 05/30/2024 ther is not a native instalation for 23a free version available to Windows.
+
+    The last free version available to Window is 21c. (https://docs.oracle.com/en/database/oracle/oracle-database/21/xeinw/index.html)
+
+    Requirements
+
+        Requirements for installing and developing includig VSCode Extentions:
+
+        https://docs.oracle.com/en/database/oracle/oracle-database/21/xeinw/requirements.html#GUID-A3CFFC57-490B-42EE-97B3-1C48D914083B
+
+    Download link for Windows
+
+        https://www.oracle.com/br/database/technologies/xe-downloads.html
+
+    Steps to a succcesfull instalation
+
+        01. See the official documentation, with special attention to System Requirements section.

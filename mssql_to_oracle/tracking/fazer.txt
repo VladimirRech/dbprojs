@@ -1,6 +1,7 @@
 Realizar download do instalador.
-Verificar espaçõ necessário e criar estrutura para instalação na máquina local.
+Verificar espaço necessário e criar estrutura para instalação na máquina local.
 Instalar.
+Instalar extensões do Oracle no VS Code.
 Fazer download do banco de dados de exemplo.
 Importar o banco de dados de exemplo.
 Seguir próximos passos.
