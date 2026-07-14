@@ -53,3 +53,31 @@ O contêiner roda em uma rede interna isolada. Se o banco de dados lá dentro es
 ## III. Variáveis de Ambiente (Environment Variables)
 Nunca coloque senhas de banco de dados, chaves de API ou caminhos rígidos (hardcoded) dentro do seu código de ETL ou da sua imagem. O Docker permite injetar essas configurações em tempo de execução. Assim, a exata mesma imagem que você testou localmente roda em produção apenas mudando as credenciais injetadas.
 
+# 4. Fluxo recomendado para estudos:Crie seu próprio Dockerfile (O Batismo):
+
+1. Pegue um script simples de ETL que você já tenha (em Python, por exemplo).
+    * Crie um Dockerfile que parta de uma imagem oficial (`FROM python:3.10-slim`).
+    * Instale as dependências (`RUN pip install pandas sqlalchemy ...`).
+    * Copie seu script para dentro da imagem (`COPY . /app`).
+    * Defina o comando de execução (`CMD ["python", "/app/seu_script.py"]`).
+2. Entenda o ciclo de vida do contêiner:
+    * Pratique a diferença entre `docker stop` (pausa o processo, mas mantém o estado temporário no disco) e `docker rm` (destrói o contêiner e limpa o lixo).
+    * Aprenda a inspecionar o que está acontecendo lá dentro usando `docker logs <nome_container>` e `docker stats` (para monitorar consumo de RAM e CPU).
+3. Aprenda o Docker Compose (O próximo nível obrigatório):
+    * No mundo real, você raramente rodará comandos gigantescos do Docker no terminal. Você usará o Docker Compose (um arquivo yaml simples).
+    * Ele serve para coordenar múltiplos contêineres. Por exemplo: subir o seu banco de dados Oracle + o seu script de ETL de forma unificada, garantindo que o ETL só comece a rodar depois que o banco estiver saudável.
+
+# Exemplos
+Exemplo de comandos considerando a imagem nomeada como **oracle-db**
+
+```bash
+
+# Iniciando a imagem - se estiver stopped
+$ docker start oracle-db
+
+# Verificando a execução
+$ docker stats
+
+# Interrompendo:
+$ docker stop
+```
