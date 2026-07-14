@@ -1,0 +1,5 @@
+Instância: localhost
+Porta: 1521
+Usuário: sys
+Role: SYSDBA
+Senha: DebOrcl-321
