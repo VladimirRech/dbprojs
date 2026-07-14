@@ -80,4 +80,7 @@ $ docker stats
 
 # Interrompendo:
 $ docker stop
+
+# Obtendo informações - Usar o | less para poder ler tudo.
+$ docker info | less
 ```
