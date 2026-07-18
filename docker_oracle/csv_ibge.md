@@ -53,3 +53,8 @@ Exemplo de fórmula:
 Arquivos:
 * **censo_2022_paraná-script.ods**: planilha do Libre Office para gerar o script SQL.
 * **insere_registros_paraná.sql**: script SQL para inserção dos registros.
+
+## 2. Script que Lê o arquivo
+Para automatizar o processo fazendo com que os dados sejam importados a partir de um arquivo de texto, o recurso a ser utilizado é o **Oracle External Tables**. Consiste em mapear uma pasta no servidor e indicar um link de um arquivo CSV como se fosse uma tabela.
+
+O processo de importação está descrito no arquivo `oracle_external_tables.md`(ainda em elaboração).
