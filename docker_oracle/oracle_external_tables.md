@@ -57,3 +57,33 @@ FROM tabela_externa_txt;
 COMMIT;
 ```
 
+# PASSO A PASSO CRIANDO TABELA EXTERNA
+Criando a tabela externa usando uma instância do Oracle executando em uma imagem do Docker.
+
+## Definindo a pasta
+Será usada uma pasta local: `/home/vlad/git/dbprojs/docker_oracle`.
+
+A tabela não está visível de dentro da imagem do Docker.
+
+Segundo a documentação, ao executar o comando `run` e carregar a imagem, deve ser passada qual é a pasta no -v.
+
+A pasta passada foi `/opt/oracle/oradata`, que não existe na máquina local e corresponde a pasta interna da imagem.
+
+# PROBLEMA: LOCALIZAR ARQUIVO DE CONFIGURAÇÃO DO DOCKER PARA VER PASTAS MAPEADAS
+
+# Volumes
+Os volumes do Docker (o volume oracle_data criado está nestes), ficam na pasta `/var/lib/docker/volumes`.
+
+Ao ajustar as permissões foi possível ver a pasta.
+
+Como estou usando para testes, o usuário será o **SYS**, em um ambiente de produção nunca deve ser usado este login.
+
+```SQL
+-- Cria o ponteiro para o diretório do servidor onde o arquivo de texto está salvo
+CREATE OR REPLACE DIRECTORY dir_importacao AS 'oracle_data';
+
+-- Concede permissão de leitura para o usuário que vai importar
+GRANT READ, WRITE ON DIRECTORY dir_importacao TO sys;
+```
+
+A pasta `oracle_data` está localizada em `/var/lib/docker/volumes`, assim, o arquivo deverá ser copiado nesta pasta.
